@@ -1,0 +1,6 @@
+name: ReplaceChatMessage
+version: 0.0.1
+main: com.gmail.mckokumin.rcm.Main
+commands:
+  rcm:
+    permission: natyu.rcm
