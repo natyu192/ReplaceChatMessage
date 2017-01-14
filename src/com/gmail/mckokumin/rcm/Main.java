@@ -87,13 +87,6 @@ public class Main extends JavaPlugin implements Listener{
 								return true;
 							}
 						}
-						/*if (getConfig().getConfigurationSection("replace").getKeys(false).contains(rep)){
-							Set<String> list = getConfig().getConfigurationSection("replace").getKeys(false);
-							list.remove(rep);
-							getConfig().set("replace", list);
-							saveConfig();
-							sender.sendMessage(prefix + "メッセージが削除されました: " + rep);
-						}*/
 					}
 					return true;
 				}
