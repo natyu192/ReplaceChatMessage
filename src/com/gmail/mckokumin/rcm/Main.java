@@ -15,12 +15,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
 	public String prefix = "§1[§9RCM§1]§9";
-	public boolean enable = true;
+	public boolean isenable = true;
 
 	public void onEnable(){
 		saveDefaultConfig();
 		saveConfig();
 		getServer().getPluginManager().registerEvents(this, this);
+
 	}
 
 	public void onDisable() {
@@ -45,12 +46,12 @@ public class Main extends JavaPlugin implements Listener{
 					return true;
 				}
 				if (args[0].equalsIgnoreCase("enable")){
-					enable = true;
+					isenable = true;
 					sender.sendMessage(prefix + "有効化しました");
 					return true;
 				}
 				if (args[0].equalsIgnoreCase("disable")){
-					enable = false;
+					isenable = false;
 					sender.sendMessage(prefix + "無効化しました");
 					return true;
 				}
@@ -107,7 +108,7 @@ public class Main extends JavaPlugin implements Listener{
 	@EventHandler
 	public void onChat(AsyncPlayerChatEvent event){
 		Player p = event.getPlayer();
-		if (!p.hasPermission("natyu.rcm.bypass") && enable){
+		if (!p.hasPermission("natyu.rcm.bypass") && isenable){
 			String msg = event.getMessage();
 			for (Map<?, ?> map : getConfig().getMapList("replace")){
 				String key = Arrays.asList(map.keySet()).get(0).toString();
